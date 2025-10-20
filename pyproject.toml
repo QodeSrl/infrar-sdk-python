@@ -1,0 +1,62 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "infrar"
+version = "0.1.0"
+description = "Write cloud-agnostic infrastructure code that transforms to AWS, GCP, or Azure"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache License 2.0"}
+authors = [
+    {name = "Infrar Team", email = "support@infrar.io"}
+]
+keywords = ["cloud", "multi-cloud", "aws", "gcp", "azure", "infrastructure-as-code", "portability"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.urls]
+Homepage = "https://github.com/QodeSrl/infrar-sdk-python"
+Documentation = "https://docs.infrar.io"
+Repository = "https://github.com/QodeSrl/infrar-sdk-python"
+Issues = "https://github.com/QodeSrl/infrar-sdk-python/issues"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+    "flake8>=6.0.0",
+]
+aws = ["boto3>=1.28.0"]
+gcp = ["google-cloud-storage>=2.10.0"]
+azure = ["azure-storage-blob>=12.0.0"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v"
+# Uncomment when pytest-cov is installed: --cov=infrar --cov-report=term-missing
