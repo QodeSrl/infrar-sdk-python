@@ -218,6 +218,70 @@ pip install infrar[gcp]
 pip install infrar[aws,gcp,azure]
 ```
 
+## ⚠️ Known Limitations (v0.1.0)
+
+The current MVP has a few limitations when writing code for transformation:
+
+### 1. Comments in Functions
+
+**Issue**: Comments inside functions containing infrar calls may cause syntax errors during transformation.
+
+**Example that may fail**:
+```python
+def upload_data():
+    # Upload the file to storage
+    upload(bucket='data', source='file.csv', destination='backup.csv')
+```
+
+**Workaround**: Remove inline comments before transformation, or add them after:
+```python
+def upload_data():
+    upload(bucket='data', source='file.csv', destination='backup.csv')
+```
+
+### 2. Variable Assignments with list_objects()
+
+**Issue**: Assigning the result of `list_objects()` to a variable isn't fully supported yet.
+
+**Example that may not work**:
+```python
+files = list_objects(bucket='data', prefix='reports/')
+print(files)
+```
+
+**Workaround**: For MVP testing, call without assignment or handle in post-transformation.
+
+### 3. Recommended Patterns
+
+For best results with the current MVP:
+
+✅ **DO**: Use simple, direct function calls
+```python
+upload(bucket='data', source='file.csv', destination='backup.csv')
+download(bucket='data', source='result.csv', destination='output.csv')
+```
+
+✅ **DO**: Use functions without inline comments
+```python
+def process_data():
+    upload(bucket='data', source='input.csv', destination='processed/input.csv')
+    download(bucket='data', source='output.csv', destination='result.csv')
+```
+
+✅ **DO**: Use multi-line arguments
+```python
+upload(
+    bucket='analytics-bucket',
+    source='report.csv',
+    destination='reports/2024/report.csv'
+)
+```
+
+❌ **AVOID**: Inline comments in functions with infrar calls
+❌ **AVOID**: Variable assignments with list_objects() for now
+
+These limitations will be addressed in future releases. See [infrar-engine issues](https://github.com/QodeSrl/infrar-engine/issues) for status updates.
+
 ## 📖 API Reference
 
 ### infrar.storage.upload()
