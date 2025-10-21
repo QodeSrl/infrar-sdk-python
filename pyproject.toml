@@ -8,7 +8,6 @@ version = "0.1.0"
 description = "Write cloud-agnostic infrastructure code that transforms to AWS, GCP, or Azure"
 readme = "README.md"
 requires-python = ">=3.8"
-license = {text = "Apache License 2.0"}
 authors = [
     {name = "Infrar Team", email = "support@infrar.io"}
 ]

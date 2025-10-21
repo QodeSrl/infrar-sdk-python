@@ -16,6 +16,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Infrar Team",
     author_email="support@infrar.io",
+    license="Apache License 2.0",
     url="https://github.com/QodeSrl/infrar-sdk-python",
     project_urls={
         "Documentation": "https://docs.infrar.io",
@@ -55,7 +56,6 @@ setup(
         "Topic :: Internet",
     ],
     keywords="cloud multi-cloud aws gcp azure infrastructure-as-code portability",
-    license="Apache License 2.0",
     zip_safe=False,
     include_package_data=True,
 )
