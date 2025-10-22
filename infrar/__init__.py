@@ -18,7 +18,7 @@ The above code will be transformed to:
 __version__ = "0.1.0"
 __author__ = "Infrar Team"
 __email__ = "support@infrar.io"
-__license__ = "Apache License 2.0"
+__license__ = "GNU General Public License v3.0"
 
 # Re-export commonly used modules
 from infrar import storage

@@ -16,7 +16,7 @@ setup(
     long_description_content_type="text/markdown",
     author="Infrar Team",
     author_email="support@infrar.io",
-    license="Apache License 2.0",
+    license="GNU General Public License v3.0",
     url="https://github.com/QodeSrl/infrar-sdk-python",
     project_urls={
         "Documentation": "https://docs.infrar.io",
@@ -44,7 +44,7 @@ setup(
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: Apache Software License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",

@@ -2,7 +2,7 @@
 
 **Write cloud-agnostic infrastructure code that transforms to AWS, GCP, or Azure at deployment time**
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-GPL%20v3-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/downloads/)
 [![Status](https://img.shields.io/badge/status-alpha-yellow)](https://github.com/QodeSrl/infrar-sdk-python)
 
@@ -393,7 +393,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ## 📄 License
 
-Apache License 2.0 - see [LICENSE](LICENSE) file for details.
+GNU General Public License v3.0 - see [LICENSE](LICENSE) file for details.
 
 ## 📞 Support
 
